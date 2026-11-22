@@ -4,6 +4,7 @@
 ## User settings
 xcuserdata/
 stuff-to-ignore/
+.DS_Store
 ## Obj-C/Swift specific
 *.hmap
 
