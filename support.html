@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support – Madrigal</title>
+  <meta name="description" content="Help with providers, on-device models, web search and sync in Madrigal.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a href="index.html"><img src="assets/mark.png" alt=""></a>
+      <a class="name" href="index.html">Madrigal</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html" aria-current="page">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <h1>Support</h1>
+      <p class="lede">Answers to common questions. If something isn't covered here, <a href="https://github.com/cwhittl/madrigal/issues">open an issue on GitHub</a>.</p>
+
+      <h2>Getting started</h2>
+
+      <details open>
+        <summary>How do I add a provider?</summary>
+        <p>Open Settings (the gear in the sidebar, or &#8984;, on Mac), tap <strong>Add Provider</strong>, and pick a preset. Paste your API key, tap <strong>Fetch models</strong>, choose a model, then close Settings and start a chat. Keys come from each provider's own dashboard, for example platform.openai.com or openrouter.ai/keys.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to pay for an AI service?</summary>
+        <p>Not necessarily. Apple Intelligence (on supported devices with iOS 26 or macOS 26 and later) and downloaded on-device models are free and need no key. Hosted providers bill you directly, through your own account, for what you use.</p>
+      </details>
+
+      <details>
+        <summary>How do I set up Cloudflare Workers AI?</summary>
+        <p>Pick the Cloudflare Workers AI preset. It asks for:</p>
+        <ul>
+          <li><strong>Account ID</strong>: 32 hexadecimal characters, shown in the Cloudflare dashboard sidebar or in the URL of your account overview page.</li>
+          <li><strong>API token</strong>: create one under My Profile &rarr; API Tokens with the <strong>Workers AI: Read</strong> permission. This is not your Global API Key.</li>
+        </ul>
+        <p>Fetch models lists Cloudflare's text-generation models. You can also type a model ID such as <code>@cf/meta/llama-3.1-8b-instruct</code>.</p>
+      </details>
+
+      <details>
+        <summary>Can I use LM Studio, Ollama or my own server?</summary>
+        <p>Yes. Use the LM Studio or Ollama preset, or Custom for any OpenAI-compatible endpoint. On iPhone and iPad, <code>localhost</code> means the device itself, so enter your computer's local IP address (for example <code>http://192.168.1.20:1234/v1</code>) and allow connections from the local network in the server's settings.</p>
+      </details>
+
+      <h2>On-device models</h2>
+
+      <details>
+        <summary>How do I run a model on my device?</summary>
+        <p>Add the <strong>On-device models (MLX)</strong> provider and download a model from the list. Each model is rated against your device's memory as Recommended, May be slow or unstable, or needing more memory than the device has. Models run on Apple silicon iPhones, iPads and Macs, and work offline once downloaded.</p>
+      </details>
+
+      <details>
+        <summary>Why did a reply stop when I left the app?</summary>
+        <p>On iOS 26 and later, replies keep going in the background, with progress shown by the system. On-device replies move to the slower CPU while the app is in the background, except on iPads that allow background GPU work. On earlier versions of iOS, replies stop shortly after you leave the app; use Regenerate to try again.</p>
+      </details>
+
+      <details>
+        <summary>Can on-device models search the web?</summary>
+        <p>Yes. Turn on <strong>Web search</strong> in the provider's settings. By default, queries go from your device to DuckDuckGo and Wikipedia. You can also use the Brave Search API with your own key, or a SearXNG server you run. A reply lists its sources below the text.</p>
+      </details>
+
+      <h2>Sync and data</h2>
+
+      <details>
+        <summary>How does sync work?</summary>
+        <p>Chats, projects, agents and providers sync through your private iCloud database to every device signed in to the same Apple Account. API keys sync through iCloud Keychain. Make sure iCloud and iCloud Keychain are turned on in your device's settings. Downloaded models don't sync; download them on each device.</p>
+      </details>
+
+      <details>
+        <summary>Can I export a chat?</summary>
+        <p>Yes. Use the export button in a chat's toolbar to copy it as Markdown, share it, or save a Markdown file.</p>
+      </details>
+
+      <details>
+        <summary>Where can I read what the app sends, and to whom?</summary>
+        <p>In the app under Settings &rarr; Privacy &rarr; What gets sent, and where, or in the <a href="privacy.html">privacy policy</a>.</p>
+      </details>
+
+      <h2>Still stuck?</h2>
+      <p><a class="button" href="https://github.com/cwhittl/madrigal/issues">Open an issue on GitHub</a></p>
+      <p>Please include your device, OS version, the provider you're using, and what you expected to happen. Never paste your API key.</p>
+    </div>
+  </main>
+  <footer class="site">
+    <div class="wrap">
+      <span>&copy; 2026 Chris Whittle</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="https://github.com/cwhittl/madrigal">Source on GitHub</a>
+      <a href="https://github.com/cwhittl/madrigal/blob/main/LICENSE">License (PolyForm Noncommercial 1.0.0)</a>
+    </div>
+  </footer>
+</body>
+</html>
